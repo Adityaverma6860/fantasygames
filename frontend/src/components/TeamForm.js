@@ -6,7 +6,7 @@ function TeamForm({ selectedPlayers, setTeam }) {
 
     const handleSubmit = () => {
         const playerIds = selectedPlayers.map(player => player._id);
-        axios.post('http://localhost:5000/teams', { name: teamName, playerIds })
+        axios.post('http://localhost:5000/api/v1/products', { name: teamName, playerIds })
             .then(response => setTeam(response.data))
             .catch(error => console.error('Error creating team:', error));
     };
