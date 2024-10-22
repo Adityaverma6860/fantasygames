@@ -3,7 +3,7 @@ const Team = require('../models/team');
 const Player = require('../models/player');
 const router = express.Router();
 
-// POST /teams - Create a new team
+
 router.post('/api/v1/product/new', async (req, res) => {
   try {
     const { name, players } = req.body;
@@ -18,7 +18,6 @@ router.post('/api/v1/product/new', async (req, res) => {
   }
 });
 
-// GET /teams/:id - Retrieve a specific team by ID
 router.get('/api/v1/product:id', async (req, res) => {
   try {
     const team = await Team.findById(req.params.id).populate('players');
